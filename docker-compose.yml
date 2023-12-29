@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+
+  mongodb:
+    image: mongo:5.0
+    ports:
+      - "27017:27017" # Puerto por default de MongoDB
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin741
+    volumes:
+    # Hay que agregar la carpeta mongo_data al .gitignore
+      - ./mongo_data:/data/db # Guardar el estado de la BD
+
