@@ -11,5 +11,7 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: admin741
     volumes:
     # Hay que agregar la carpeta mongo_data al .gitignore
-      - ./mongo_data:/data/db # Guardar el estado de la BD
+      - mongo_data:/data/db # Guardar el estado de la BD
 
+volumes:
+  mongo_data:
