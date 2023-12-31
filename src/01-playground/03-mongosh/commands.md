@@ -22,16 +22,21 @@ db.products.find()
 
 # Exportar archivo csv a BD en MongoDB dentro de Docker
 
-# Copiar el archivo del Host al docker
+# Copiar archivos del Host al docker
 
 ```sh
 docker cp D:\Documents\Cursos\MongoDB\Introducción\features-v1.csv introduccin-mongodb-1:/media
+
+docker cp D:\Documents\Cursos\MongoDB\Introducción\python\routes_data.csv introduccin-mongodb-1:/media
 ```
 
 ```sh
 docker-compose exec mongodb bash
 ```
 
+# Importar las características y rutas de las imágenes
 ```sh
-mongoimport --db Clothes --collection features --type csv --headerline --file "/media/features-v1.csv" --username <username> --password <password> --authenticationDatabase <username>
+mongoimport --db clothes --collection features --type csv --headerline --file "/media/features-v1.csv" --username <username> --password <password> --authenticationDatabase <username>
+
+mongoimport --db clothes --collection data --type csv --headerline --file "/media/routes_dataset.csv" --username <username> --password <password> --authenticationDatabase <username>
 ```
